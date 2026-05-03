@@ -1,0 +1,22 @@
+# SQL Server database files — never push these
+*.mdf
+*.ldf
+*.bak
+*.bacpac
+
+# Large data files — only sample goes to GitHub
+data/banksalesdata.csv
+data/loan_applications_100k.csv
+
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
