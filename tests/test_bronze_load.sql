@@ -97,3 +97,24 @@ WHERE run_id = 5
 ORDER BY dq_id;
 
 
+-- Verify silver.applications table structure
+-- Check all columns created correctly
+-- Column count, names and data types
+
+-- Verify silver.applications table structure
+-- Check all columns created correctly
+-- Column count, names and data types
+
+USE IndusLoanDB;
+GO
+
+SELECT
+    column_id,
+    name            AS column_name,
+    TYPE_NAME(user_type_id) AS data_type,
+    max_length,
+    is_nullable
+FROM sys.columns
+WHERE object_id = OBJECT_ID('silver.applications')
+ORDER BY column_id;
+GO
