@@ -79,3 +79,21 @@ FROM bronze.applications b
 JOIN bronze.masked_attributes m
     ON b.App_Id = m.App_Id;
 GO
+
+
+-- Verify DQ results logged correctly
+SELECT
+    dq_id,
+    rule_id,
+    rule_description,
+    severity,
+    result,
+    expected_value,
+    actual_value,
+    rows_affected,
+    checked_at
+FROM audit.dq_results
+WHERE run_id = 5
+ORDER BY dq_id;
+
+
